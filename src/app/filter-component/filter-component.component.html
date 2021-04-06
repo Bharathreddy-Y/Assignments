@@ -1,0 +1,23 @@
+<div class="main-class">
+    <!-- To Filter data -->
+    <div class="filter-main-div">
+        <div class="filter-select-div">
+            <mat-form-field appearance="fill">
+                <mat-label>Filter By Course</mat-label>
+                <mat-select  [(ngModel)]="selectedCourse" (ngModelChange)="onSelectModelChange(selectedCourse)">
+                  <mat-option *ngFor="let name of courseArray" [value]="name.name">{{name.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+        <div class="filter-div">
+            <mat-card class="main-mat-card" *ngFor="let array of filteredArray">
+                <mat-card-header>
+                    <mat-card-title #element >{{array.name}}</mat-card-title>
+                    <mat-card-subtitle>{{array.course}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="mat-content">{{array.email}}</mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <!-- End -->
+</div>

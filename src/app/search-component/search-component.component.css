@@ -1,0 +1,42 @@
+.main-class{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.search-div{
+    display: flex;
+    justify-content: center;
+    height: 10%;
+}
+.search-div h2{
+    position: relative;
+    left: 5%;
+    top: 25%;
+    cursor: pointer;
+}
+/* table{ */
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    /* height: 50%;
+    width: 100%; */
+/* } */
+/* .table-row{
+    width: 50%;
+    height: 15%;
+}
+.table-head1{
+    height: 100%;
+    width: 25%;
+    position: relative;
+    left: 2rem;
+}
+.table-head2{
+    height: 100%;
+    width: 25%;
+    position: relative;
+    left: 7rem;
+} */

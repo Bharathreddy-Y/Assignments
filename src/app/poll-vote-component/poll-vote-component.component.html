@@ -1,0 +1,19 @@
+<div class="main-class">
+    <h1>Polling Booth</h1>
+    <div class="vote-card-main-div">
+        <div class="vote-card" *ngFor="let candidate of candidateArray">
+            <h3>{{candidate.name}}</h3>
+            <h4>Count :- {{candidate.count}}</h4>
+        </div>
+    </div>
+    <div class="mat-card-main-div">
+        <mat-card class="mat-card-div" *ngFor="let candidate of candidateArray">
+            <mat-card-title class="mat-car-title">{{candidate.name}}</mat-card-title>
+            <mat-card-content class="mat-card-content-div">
+                <div class="mat-card-img-div">
+                    <img [src]="candidate.imgSrc" class="mat-card-image" (click)="onClickToVote(candidate.id)">
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

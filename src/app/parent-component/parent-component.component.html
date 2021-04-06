@@ -1,0 +1,83 @@
+<div class="main-class">
+    <!-- User Form Start From Here -->
+    <div class="user-form-main-div">
+        <form [formGroup]="userForm" class="user-form">
+            <mat-form-field class="mat-form-field-class">
+                <mat-label>Id</mat-label>
+                <input matInput placeholder="Id"class="input-class" type="Number" formControlName="id" />
+            </mat-form-field>
+            <span *ngIf="!userForm.controls.id?.valid && userForm.controls.id?.dirty || userForm.controls.id?.touched">Please Enter Id</span>
+            
+            <!-- Image upload -->
+            <img [src]="imageFile" style="height: 10rem;width: 10rem;">
+            <input type="file" name="filename" accept="image/*" formControlName="file" (change)="onImageChange($event)">
+            <!--  -->
+            
+            
+            <mat-form-field class="mat-form-field-class">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name"class="input-class" type="text" formControlName="name" />
+            </mat-form-field>
+            <span *ngIf="!userForm.controls.name?.valid && (userForm.controls.id?.dirty || userForm.controls.name?.touched)">Maximum Value is 10</span>
+            <mat-form-field class="mat-form-field-class">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email"class="input-class" type="email" formControlName="email"/>
+            </mat-form-field>
+            <span *ngIf="!userForm.controls.email?.valid && userForm.controls.email?.touched">Please Enter Valid Email</span>
+            <mat-form-field class="mat-form-field-class" appearance="fill" >
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker"placeholder="DOB"class="input-class" formControlName="dob">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <span *ngIf="!userForm.controls.dob?.valid && userForm.controls.dob?.touched">Please Select Valid DOB</span>
+            <mat-form-field appearance="fill" class="mat-form-field-class">
+                <mat-label>Country</mat-label>
+                <mat-select formControlName="country">
+                  <mat-option [value]="countryValue.name" *ngFor="let countryValue of countryArray">{{countryValue.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <span *ngIf="!userForm.controls.country?.valid && userForm.controls.country?.touched">Please Select Valid Country</span>
+            <div class="mat-form-field-class">
+                <button mat-button (click)="submitForm()" [disabled]="!userForm.valid">Submit Form</button>
+            </div>
+        </form>
+    </div>
+    <!-- Form Ends Here -->
+    <!-- Table Starts Here -->
+    <table mat-table [dataSource]="dataSource" class="user-table-class">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element" (click)="onSelect(element)"> {{element.id}} </td>
+          </ng-container>
+          <ng-container matColumnDef="imgSrc">
+            <th mat-header-cell *matHeaderCellDef> Image </th>
+            <td mat-cell *matCellDef="let element"> <img [src]="element.imgSrc" style="height: 10rem;width: 10rem;"> </td>
+          </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element" (click)="showEditForm(element.id)"> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+        <ng-container matColumnDef="dob">
+            <th mat-header-cell *matHeaderCellDef> Date of Birth </th>
+            <td mat-cell *matCellDef="let element"> {{element.dob}} </td>
+        </ng-container>
+          <ng-container matColumnDef="country">
+            <th mat-header-cell *matHeaderCellDef> Country </th>
+            <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+          </ng-container>
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>   
+            <td mat-cell *matCellDef="let element"> 
+              <button mat-raised-button (click)="deleteUser(element.id)">Delete</button> 
+            </td>
+        </ng-container> 
+            <tr mat-header-row *matHeaderRowDef="userHeaderColumns" ></tr>
+            <tr mat-row *matRowDef="let row; columns: userHeaderColumns;"></tr>
+    </table>
+    <!-- Table Ends Here -->
+</div>

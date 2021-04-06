@@ -1,0 +1,21 @@
+.main-class{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mat-card{
+    height: 20%;
+    width: 20%;
+}
+.mat-card-title{
+    text-align: center;
+}
+.mat-card-subtitle{
+    position: relative;
+    top: 15%;
+}

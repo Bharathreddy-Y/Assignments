@@ -1,0 +1,39 @@
+.main-class{
+    position: absolute;
+    height: auto;
+    width: 100%;
+    left: 0%;
+    top: 0%;
+}
+.filter-main-div{
+    height: 100%;
+}
+.filter-select-div{
+    position: relative;
+    top:10rem;
+    left: 10rem;
+}
+.filter-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+.main-mat-card{
+    width: 20%;
+    min-height: 10rem;
+    max-height: auto;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-bottom: 0%;
+    transition: transform 300ms linear ;
+    cursor: pointer;
+}
+.main-mat-card:hover{
+    transform: scale3d(-1,-1,-1);
+}
+.mat-content{
+    text-align: center;
+}
