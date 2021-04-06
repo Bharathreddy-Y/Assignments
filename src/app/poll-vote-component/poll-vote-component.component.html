@@ -3,14 +3,27 @@
     <div class="vote-card-main-div">
         <div class="vote-card" *ngFor="let candidate of candidateArray">
             <h3>{{candidate.name}}</h3>
-            <h4>Count :- {{candidate.count}}</h4>
+            <h4>Ballot Votes :- {{candidate.count}}/{{totalVotes}}</h4>
         </div>
     </div>
-    <div class="mat-card-main-div">
-        <mat-card class="mat-card-div" *ngFor="let candidate of candidateArray">
-            <mat-card-title class="mat-car-title">{{candidate.name}}</mat-card-title>
-            <mat-card-content class="mat-card-content-div">
-                <div class="mat-card-img-div">
+    <div class="mat-card-voter-div" *ngIf="showVoters">
+        <mat-form-field appearance='fill'>
+            <mat-select  [(ngModel)]="selectedVoter" (ngModelChange)="onClickToSelectVoter(selectedVoter)">
+                <mat-option *ngFor="let voters of votersArray" [value]="voters.name">{{voters.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="mat-card-message-div" *ngIf="showMessage">
+        <h1>{{message}}</h1>
+    </div>
+    <div class="mat-card-message-div" *ngIf="voterExistMessage">
+        <h1>{{votermessage}}</h1>
+    </div>
+    <div class="mat-card-main-div" *ngIf="showBallotBox">
+            <mat-card class="mat-card-div" *ngFor="let candidate of candidateArray">
+                <mat-card-title class="mat-car-title">{{candidate.name}}</mat-card-title>
+                <mat-card-content class="mat-card-content-div">
+                    <div class="mat-card-img-div">
                     <img [src]="candidate.imgSrc" class="mat-card-image" (click)="onClickToVote(candidate.id)">
                 </div>
             </mat-card-content>

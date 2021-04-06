@@ -15,6 +15,21 @@
 .vote-card{
     margin-top: 5rem;
 }
+.mat-card-voter-div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+    width: 100%;
+}
+.mat-card-message-div{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+    width: 100%;
+    color: red;
+}
 .mat-card-main-div{
     display: flex;
     justify-content: center;
