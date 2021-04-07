@@ -17,7 +17,10 @@ import {MatCardModule} from '@angular/material/card';
 import { SearchComponentComponent } from './search-component/search-component.component';
 import { FilterComponentComponent } from './filter-component/filter-component.component';
 import { FormsModule} from '@angular/forms';
-import { PollVoteComponentComponent } from './poll-vote-component/poll-vote-component.component'
+import { PollVoteComponentComponent } from './poll-vote-component/poll-vote-component.component';
+import { QuizComponentComponent } from './quiz-component/quiz-component.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -28,6 +31,7 @@ import { PollVoteComponentComponent } from './poll-vote-component/poll-vote-comp
     SearchComponentComponent,
     FilterComponentComponent,
     PollVoteComponentComponent,
+    QuizComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { PollVoteComponentComponent } from './poll-vote-component/poll-vote-comp
     MatButtonModule,
     MatTableModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatCheckboxModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

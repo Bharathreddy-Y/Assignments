@@ -1,6 +1,6 @@
 .main-class{
     position: absolute;
-    height: 100%;
+    height: auto;
     width: 100%;
     left: 0%;
     top: 0%;
@@ -39,8 +39,12 @@
 }
 .mat-card-div{
     position: relative;
-    height: 50%;
+    min-height: 250px;
+    max-height: auto;
     width: 30%;
+}
+.mat-card-image:first-child{
+    margin-top: 0;
 }
 .mat-card-title{
     text-align: center;

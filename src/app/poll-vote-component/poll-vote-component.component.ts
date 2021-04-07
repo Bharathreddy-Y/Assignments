@@ -13,15 +13,17 @@ export class PollVoteComponentComponent implements OnInit {
     {id:2,name:"K.A Paul Uncle",imgSrc:"/../../assets/Voters Images/helicopter.jfif",count:0}
   ]
   public votersArray=[
+    {id:6,name:"Select Voter"},
     {id:0,name:"Bharath",age:26,isVote:false,votecount:0},
     {id:1,name:"Arun",age:18,isVote:false,votecount:0},
     {id:2,name:"Pawan",age:23,isVote:false,votecount:0},
     {id:3,name:"Ram",age:22,isVote:false,votecount:0},
     {id:4,name:"Harish",age:26,isVote:false,votecount:0},
     {id:5,name:"Sravani",age:15,isVote:false,votecount:0},
+    
   ]
   public voterAge:number=0
-  public selectedVoter:string=""
+  public selectedVoter:string="Select Voter"
   public message:string=""
   public votermessage:string=""
   public showMessage:boolean=false
@@ -33,15 +35,14 @@ export class PollVoteComponentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.totalVotes=this.votersArray.length-1
   }
   onClickToSelectVoter(event:any){
-    // console.log(event)
     this.votersArray.forEach((voter:any)=>{
       if(voter.name === event)
       {
         if(voter.age > 18)
         {
-          console.log(voter.votecount)
           voter.votecount += 1
           if(voter.votecount<=1)
           {
@@ -51,9 +52,10 @@ export class PollVoteComponentComponent implements OnInit {
             this.showMessage=false
           }
           else{
+            console.log(voter.votecount)
             this.showVoters=true
             this.showBallotBox=false
-            voter.isVote = false
+            voter.isVote = true
             this.isVoted = voter.isVote
             this.voterExistMessage=true
             this.showMessage=false
@@ -65,14 +67,14 @@ export class PollVoteComponentComponent implements OnInit {
           this.showBallotBox=false
           this.voterExistMessage=false
           this.showVoters = true
-          this.isVoted=voter.isVote
+          this.isVoted=false
           this.message="You are not Eligible to Vote."
         }
       }
+      this.selectedVoter="Select Voter"
     })
   }
   onClickToVote(id:any){
-    this.totalVotes+=1
     this.candidateArray.forEach((item:any)=>
     {
       if(item.id === id)
@@ -82,6 +84,5 @@ export class PollVoteComponentComponent implements OnInit {
         item.count += 1
       }
     })
-    // console.log("Total votes "+this.totalVotes)
   }
 }

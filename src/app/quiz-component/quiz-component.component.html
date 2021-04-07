@@ -1,0 +1,19 @@
+<div class="main-class">
+    <div class="score-div" *ngIf="showScore">
+        <h1>Score : {{score}}</h1>
+    </div>
+    <div class="quiz-main-div" *ngIf="showQuiz">
+        <div class="quiz-div" *ngFor="let q of singleQuizArray">
+            <h2>Q{{q.id}} : {{q.question.Q}}</h2>
+            <div class="mat-div">
+                <mat-radio-button value="q.question.options.A" (click)="onChecked(q.question.Q,q.question.options.A)">{{q.question.options.A}}</mat-radio-button>
+                <mat-radio-button value="q.question.options.B" (click)="onChecked(q.question.Q,q.question.options.B)">{{q.question.options.B}}</mat-radio-button>
+                <mat-radio-button value="q.question.options.C" (click)="onChecked(q.question.Q,q.question.options.C)">{{q.question.options.C}}</mat-radio-button>
+                <mat-radio-button value="q.question.options.D" (click)="onChecked(q.question.Q,q.question.options.D)">{{q.question.options.D}}</mat-radio-button>
+                <div class="btn-div">
+                    <button class="next-btn" (click)="onSubmit()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+.main-class{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0%;
+    left:0%;
+}
+.score-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+    height: 100%;
+}
+.score-div h1{
+    font-size: 5rem;
+}
+.quiz-main-div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+}
+.quiz-div{
+    min-height: 60rem;
+    max-height: auto;
+    min-width: 60rem;
+    max-width: auto;
+}
+.mat-div{
+    display: flex;
+    flex-direction: column;
+}
+.btn-div{
+    display: flex;
+    justify-content: center;
+}
+.next-btn{
+    width: 10rem;
+    height: 4rem;
+    background-color: rgb(88, 216, 88);
+    border-radius: 1.1rem;
+    outline: none;
+}
