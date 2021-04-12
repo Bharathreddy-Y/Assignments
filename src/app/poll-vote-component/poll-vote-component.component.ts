@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class PollVoteComponentComponent implements OnInit {
   
   public candidateArray=[
-    {id:0,name:"Jagan Anna",imgSrc:"/../../assets/Voters Images/fan.jfif",count:0},
-    {id:1,name:"Chandra Babu Thatha",imgSrc:"/../../assets/Voters Images/cycle.jfif",count:0},
-    {id:2,name:"K.A Paul Uncle",imgSrc:"/../../assets/Voters Images/helicopter.jfif",count:0}
+    {id:0,name:"Jagan",imgSrc:"/../../assets/Voters Images/fan.jfif",count:0},
+    {id:1,name:"Chandra Babu",imgSrc:"/../../assets/Voters Images/cycle.jfif",count:0},
+    {id:2,name:"K.A Paul",imgSrc:"/../../assets/Voters Images/helicopter.jfif",count:0}
   ]
   public votersArray=[
     {id:6,name:"Select Voter"},
@@ -32,6 +32,8 @@ export class PollVoteComponentComponent implements OnInit {
   public voterExistMessage:boolean=false
   public totalVotes:number=0
   public isVoted:boolean=false
+  public countcolor=false
+  public show:any
   constructor() { }
 
   ngOnInit(): void {
@@ -82,6 +84,12 @@ export class PollVoteComponentComponent implements OnInit {
         this.showBallotBox=false
         this.showVoters=true
         item.count += 1
+        this.show=setInterval(()=>{
+          if(this.countcolor===false)
+          {
+            this.countcolor=true
+          }
+        },10)
       }
     })
   }

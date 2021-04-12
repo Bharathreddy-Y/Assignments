@@ -5,9 +5,24 @@
     left: 0%;
     top: 0%;
 }
+.header-div{
+    width: 100%;
+    height: 8rem;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid goldenrod;
+}
+.header-div h1{
+    font-size: 5rem;
+    font-weight: 600;
+    color: #ffff;
+    letter-spacing: 1px;
+}
 /* user form css starts from here */
 .user-form-main-div{
-    height: 100%;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -17,13 +32,14 @@
     position: relative;
     height: 70%;
     width: 30%;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 .mat-form-field-class{
-    width: 90%;
+    width: 100%;
     margin-top: 1rem;
     background-color: #ffff;
 }
@@ -50,6 +66,9 @@
     width: 100%;
     height: auto;
 }
+.mat-table{
+    width: 100%;
+}
 /* user Table css Ends Here */
 /* Edit Form css starts Here */
 .edit-main-class{
@@ -58,4 +77,30 @@
     width: 100%;
     background-color: transparent;
     z-index: 1;
+}
+.delete-btn:hover{
+    background-color: red;
+    cursor: pointer;
+}
+.id-event{
+    transition: transform 300ms ease-in-out;
+}
+.id-event:hover{
+    cursor: pointer;
+    color: blue;
+    transform: scale(1.1);
+}
+@media screen and (max-width : 426px) {
+    .main-class{
+        width: 100%;
+    }
+    .user-form{
+        width: 60%;
+    }
+    .header-div h1{
+        font-size: 3rem;
+    }
+    .user-table-class{
+        width: 100%;
+    }
 }

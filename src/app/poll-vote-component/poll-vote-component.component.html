@@ -1,32 +1,42 @@
 <div class="main-class">
-    <h1>Polling Booth</h1>
-    <div class="vote-card-main-div">
-        <div class="vote-card" *ngFor="let candidate of candidateArray">
-            <h3>{{candidate.name}}</h3>
-            <h4>Ballot Votes :- {{candidate.count}}/{{totalVotes}}</h4>
-        </div>
+    <div class="header-div">
+        <h1>Polling Booth</h1>
     </div>
-    <div class="mat-card-voter-div" *ngIf="showVoters">
-        <mat-form-field appearance='fill'>
-            <mat-select  [(ngModel)]="selectedVoter" (ngModelChange)="onClickToSelectVoter(selectedVoter)">
-                <mat-option *ngFor="let voters of votersArray" [value]="voters.name">{{voters.name}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-    </div>
-    <div class="mat-card-message-div" *ngIf="showMessage">
-        <h1>{{message}}</h1>
-    </div>
-    <div class="mat-card-message-div" *ngIf="voterExistMessage">
-        <h1>{{votermessage}}</h1>
-    </div>
-    <div class="mat-card-main-div" *ngIf="showBallotBox">
-            <mat-card class="mat-card-div" *ngFor="let candidate of candidateArray">
-                <mat-card-title class="mat-car-title">{{candidate.name}}</mat-card-title>
-                <mat-card-content class="mat-card-content-div">
-                    <div class="mat-card-img-div">
-                    <img [src]="candidate.imgSrc" class="mat-card-image" (click)="onClickToVote(candidate.id)">
+    <div class="main-body">
+        <div class="main-body-voters-div">
+            <div class="vote-card-main-div">
+                <div class="vote-card" *ngFor="let candidate of candidateArray">
+                    <h3>{{candidate.name}}</h3>
+                    <h4 [ngClass]="{'backgroundcolor':countcolor}">Ballot Votes :- {{candidate.count}}/{{totalVotes}}</h4>
                 </div>
-            </mat-card-content>
-        </mat-card>
+            </div>
+        </div>
+        <div>
+            <div class="message-mat-cards">
+                <div class="mat-card-voter-div" *ngIf="showVoters">
+                    <mat-form-field appearance='fill'>
+                        <mat-select  [(ngModel)]="selectedVoter" (ngModelChange)="onClickToSelectVoter(selectedVoter)">
+                            <mat-option *ngFor="let voters of votersArray" [value]="voters.name">{{voters.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="mat-card-message-div" *ngIf="showMessage">
+                    <h1>{{message}}</h1>
+                </div>
+                <div class="mat-card-message-div" *ngIf="voterExistMessage">
+                    <h1>{{votermessage}}</h1>
+                </div>
+                <div class="mat-card-main-div" *ngIf="showBallotBox">
+                        <mat-card class="mat-card-div" *ngFor="let candidate of candidateArray">
+                            <mat-card-title class="mat-car-title">{{candidate.name}}</mat-card-title>
+                            <mat-card-content class="mat-card-content-div">
+                                <div class="mat-card-img-div">
+                                <img [src]="candidate.imgSrc" class="mat-card-image" (click)="onClickToVote(candidate.id)">
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

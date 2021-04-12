@@ -15,9 +15,9 @@ const routes: Routes = [
   {path:'Search',component:SearchComponentComponent},
   // {path:'',redirectTo:'Filter',pathMatch:'full'},
   {path:'Filter',component:FilterComponentComponent},
-  {path:'',redirectTo:'vote',pathMatch:'full'},
+  // {path:'',redirectTo:'vote',pathMatch:'full'},
   {path:'vote',component:PollVoteComponentComponent},
-  // {path:'',redirectTo:'Quiz-App',pathMatch:'full'},
+  {path:'',redirectTo:'Quiz-App',pathMatch:'full'},
   {path:'Quiz-App',component:QuizComponentComponent}
 ];
 

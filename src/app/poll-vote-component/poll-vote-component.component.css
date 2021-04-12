@@ -5,8 +5,19 @@
     left: 0%;
     top: 0%;
 }
-.main-class h1{
-    text-align: center;
+.main-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+.header-div{
+    display: flex;
+    justify-content: center;
+}
+.header-div h1{
+    font-size: 5rem;
+    margin-top: 2rem;
 }
 .vote-card-main-div{
     display: flex;
@@ -14,6 +25,9 @@
 }
 .vote-card{
     margin-top: 5rem;
+}
+.vote-card h3{
+    font-size: 3rem;
 }
 .mat-card-voter-div{
     display: flex;
@@ -32,7 +46,7 @@
 }
 .mat-card-main-div{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     height: 100%;
     width: 100%;
@@ -41,7 +55,8 @@
     position: relative;
     min-height: 250px;
     max-height: auto;
-    width: 30%;
+    margin-left: 2rem;
+    width: 23%;
 }
 .mat-card-image:first-child{
     margin-top: 0;
@@ -66,4 +81,62 @@
 .mat-card-image{
     height: 100%;
     width: 100%;
+}
+/* .backgroundcolor{
+    background-color: red;
+} */
+@media screen and (max-width : 768px) {
+    .main-class{
+        display: flex;
+        flex-direction: column;
+    }
+    .header-div h1{
+        font-size: 2rem;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+    .main-body{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .vote-card h3{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .vote-card-main-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .mat-card-main-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+    .mat-card{
+        width:22rem;
+        height: 10rem;
+        margin-bottom: 2rem;
+    }
+    .message-mat-cards{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .mat-card-content-div{
+        height: auto;
+        width: 100%;
+    }
+    .mat-card-message-div h1{
+        font-size: 1.4rem;
+    }
+    .main-body-voters-div{
+        width: 100%;
+    }
 }

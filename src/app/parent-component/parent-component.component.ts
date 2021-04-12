@@ -20,7 +20,7 @@ export class ParentComponentComponent implements OnInit {
   public DummyArray:any=[]
   public imageArray:any=[]
   public imageSrc:string=""
-  public imageFile:string=""
+  public imageFile:string="/../../assets/DefaultImage/person-pics.jfif"
 
   dummy:Array<userModel> =  new Array<userModel>()
 

@@ -1,19 +1,38 @@
 <div class="main-class">
+    <div class="header-div">
+        <h1>Angular Online Quiz App</h1>
+    </div>
     <div class="score-div" *ngIf="showScore">
         <h1>Score : {{score}}</h1>
     </div>
+    <div class="clock-div" *ngIf="showClock">
+        <div>
+            <h1>Time</h1>
+            <span class="clock-time" [ngClass]="{'backgroundclockcolor': onTimeOut}">
+                {{minutes}}:{{seconds}}
+            </span>
+        </div>
+    </div>
+    <div *ngIf="showTotalTime" class="total-time-div">
+        <div><h1>Total Time Taken to Complete Quiz :- {{totalMinutes}} Minutes and {{totalSeconds}} Seconds</h1></div>
+    </div>
     <div class="quiz-main-div" *ngIf="showQuiz">
         <div class="quiz-div" *ngFor="let q of singleQuizArray">
-            <h2>Q{{q.id}} : {{q.question.Q}}</h2>
             <div class="mat-div">
-                <mat-radio-button value="q.question.options.A" (click)="onChecked(q.question.Q,q.question.options.A)">{{q.question.options.A}}</mat-radio-button>
-                <mat-radio-button value="q.question.options.B" (click)="onChecked(q.question.Q,q.question.options.B)">{{q.question.options.B}}</mat-radio-button>
-                <mat-radio-button value="q.question.options.C" (click)="onChecked(q.question.Q,q.question.options.C)">{{q.question.options.C}}</mat-radio-button>
-                <mat-radio-button value="q.question.options.D" (click)="onChecked(q.question.Q,q.question.options.D)">{{q.question.options.D}}</mat-radio-button>
-                <div class="btn-div">
-                    <button class="next-btn" (click)="onSubmit()">Next</button>
+                <h2>Q{{q.id}} : {{q.question.Q}}</h2>
+                <div class="mat-options-div">
+                    <mat-radio-button [ngClass]="{'backgroundcolor': onClickChangeBackColorA}" value="q.question.options.A" (click)="onChecked(q.question.Q,q.question.options.A,'A')">{{q.question.options.A}}</mat-radio-button>
+                    <mat-radio-button [ngClass]="{'backgroundcolor': onClickChangeBackColorB}" value="q.question.options.B" (click)="onChecked(q.question.Q,q.question.options.B,'B')">{{q.question.options.B}}</mat-radio-button>
+                    <mat-radio-button [ngClass]="{'backgroundcolor': onClickChangeBackColorC}" value="q.question.options.C" (click)="onChecked(q.question.Q,q.question.options.C,'C')">{{q.question.options.C}}</mat-radio-button>
+                    <mat-radio-button [ngClass]="{'backgroundcolor': onClickChangeBackColorD}" value="q.question.options.D" (click)="onChecked(q.question.Q,q.question.options.D,'D')">{{q.question.options.D}}</mat-radio-button>
+                </div>
+                    <div class="btn-div">
+                    <button class="next-btn" [ngClass]="{'backgroundbtncolor': onClickBtnChangeBackColor}" (click)="onSubmit()" [disabled]="!disablebtn">Next</button>
                 </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="showLength" class="quiz">
+        <h1 class="quiz-length">{{index+1}}-{{QuizArray.length}}</h1>
     </div>
 </div>
