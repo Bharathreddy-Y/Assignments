@@ -156,14 +156,13 @@
     .mat-div h2{
         position: relative;
         left: 0rem;
-        width: 46rem;
-        left: 3rem;
+        width: 100%;
     }
     .mat-options-div{
         display: grid;
         position: relative;
-        grid-template-columns: repeat(1,minmax(300px,100px));
-    grid-template-rows: repeat(1);
+        grid-template-columns: repeat(1,minmax(auto,auto));
+        grid-template-rows: repeat(1);
     /* grid-row-gap: 3rem; */
         left: 5rem;
     }
