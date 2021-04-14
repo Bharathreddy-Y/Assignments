@@ -21,6 +21,7 @@ import { PollVoteComponentComponent } from './poll-vote-component/poll-vote-comp
 import { QuizComponentComponent } from './quiz-component/quiz-component.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { HomeComponentComponent } from './home-component/home-component.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {MatRadioModule} from '@angular/material/radio';
     FilterComponentComponent,
     PollVoteComponentComponent,
     QuizComponentComponent,
+    HomeComponentComponent,
   ],
   imports: [
     BrowserModule,
